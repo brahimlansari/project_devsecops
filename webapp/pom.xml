@@ -21,7 +21,7 @@
     <plugins>
       <plugin>
         <groupId>org.mortbay.jetty</groupId>
-        <artifactId>jetty-maven-plugin:4.0.0</artifactId>
+        <artifactId>jetty-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
