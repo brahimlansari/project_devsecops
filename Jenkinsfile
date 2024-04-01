@@ -5,7 +5,7 @@ pipeline{
         maven 'Maven3'
     }
     stages{
-        stage("nettoyage){
+        stage("nettoyage"){
             steps{
                 netoyer()
             }
