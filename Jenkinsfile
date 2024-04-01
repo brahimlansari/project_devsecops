@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage("nettoyage"){
             steps{
-                netoyer()
+                cleanWs()
             }
         }
         stage("Checkout SCM"){
