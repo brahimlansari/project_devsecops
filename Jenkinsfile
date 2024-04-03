@@ -25,6 +25,13 @@ pipeline{
                 sh 'mvn test'
             }
         }
+        stage('SonarCloud analysis') {
+                    steps {
+                        script {
+                            def scannerHome = tool 'sonarCloud'
+                            withSonarQubeEnv('SonarCloud') {
+                                sh "${scannerHome}/bin/sonar-scanner"
+                            }
 
 
 
