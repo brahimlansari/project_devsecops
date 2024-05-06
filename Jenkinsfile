@@ -28,7 +28,7 @@ pipeline{
         stage('SonarQube analysis') {
                     steps {
                         withSonarQubeEnv('SonarCloud') {
-                            sh 'mvn sonar:sonar -Dsonar.projectKey=brahimlansari_project_devsecops -Dsonar.organization=brahimlansari-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e79d8bbefe10385340dc71969d98f8a9db237c39'
+                            sh 'mvn sonar:sonar -Dsonar.projectKey=brahimlansari -Dsonar.organization=brahimlansari -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e79d8bbefe10385340dc71969d98f8a9db237c39'
                         }
                     }
         }
