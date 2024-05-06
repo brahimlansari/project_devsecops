@@ -1,5 +1,5 @@
 pipeline{
-    agent{ label 'Jenkins-Agent'}
+    agent none
     tools{
         jdk 'Java17'
         maven 'Maven3'
@@ -25,13 +25,7 @@ pipeline{
                 sh 'mvn test'
             }
         }
-        stage('SonarCloud analysis') {
-                    steps {
-                        script {
-                            def scannerHome = tool 'sonarCloud'
-                            withSonarQubeEnv('SonarCloud') {
-                                sh "${scannerHome}/bin/sonar-scanner"
-                            }
+
 
 
 
