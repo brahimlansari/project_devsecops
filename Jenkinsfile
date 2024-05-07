@@ -54,12 +54,13 @@ pipeline{
 
                 }
             }
-            stage("Trivy Scan"){
-                steps{
-                    script{
-                        def trivyScan = docker.image('aquasec/trivy:latest').run("--no-progress ${IMAGE_NAME}:${IMAGE_TAG}")
-                        echo "${trivyScan}"
-                    }
+
+        }
+        stage("Trivy Scan"){
+            steps{
+                script{
+                    def trivyScan = docker.image('aquasec/trivy:latest').run("--no-progress ${IMAGE_NAME}:${IMAGE_TAG}")
+                    echo "${trivyScan}"
                 }
             }
         }
