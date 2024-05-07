@@ -10,7 +10,7 @@ pipeline{
         DOCKER_USER = 'brahim02'
         DOCKER_PASS = 'dockerhub'
         IMAGE_NAME = 'brahim02/projet-devsecops'
-        IMAGE_TAG = "${RELEASE_VERSION}-${BUILD_NUMBER}"
+        IMAGE_TAG = "${RELEASE_VERSION}"
     }
     stages{
         stage("nettoyage"){
