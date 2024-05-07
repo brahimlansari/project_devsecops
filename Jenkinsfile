@@ -59,8 +59,7 @@ pipeline{
         stage("Trivy Scan"){
             steps{
                 script{
-                    def trivyScan = docker.image('aquasec/trivy:latest').run("--no-progress ${IMAGE_NAME}:${IMAGE_TAG}")
-                    echo "${trivyScan}"
+                    sh ("docker run  -v /var/run/docker.sock:/var/run/docker.sock  aquasec/trivy image brahim02/projet-devsecops:latest --no progress --scanners --exit-code 0 --severity HIGH,CRITICAL --format table")
                 }
             }
         }
